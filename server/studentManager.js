@@ -103,7 +103,7 @@ var deleteStudentID = function deleteStudentID(ID)
 var deleteStudentSSN = function deleteStudentSSN(SSN)
 {
 	var position = null;
-	
+    	
     //search for the position
     for (i=0; i < studentList.length; i++)
 	{
@@ -135,6 +135,28 @@ var insertStudent = function insertStudent(student)
 
 //AGGIUNGERE QUI SOTTO NUOVE FUNZIONI
 
+var searchByCriteria = function(criteria){
+    var returnList = [];
+    if(criteria != undefined){
+    if(criteria.charAt(0) == '<'){
+    for(var i = 0; i < studentList.length; i++){
+        if(studentList[i]["mark"] < criteria[1]){
+            returnList.push(studentList[i]);
+        }
+    }
+    }else{
+        for(var i = 0; i < studentList.length; i++){
+        if(studentList[i]["mark"] > criteria[1]){
+            returnList.push(studentList[i]);
+        }
+    }
+        
+    }
+    }
+    return returnList;
+    
+}
+
 
 
 //export functions
@@ -144,3 +166,4 @@ exports.deleteStudentID = deleteStudentID;
 exports.deleteStudentSSN = deleteStudentSSN; 
 exports.insertStudent = insertStudent;  
 exports.getList = getList; 
+exports.searchByCriteria = searchByCriteria; 

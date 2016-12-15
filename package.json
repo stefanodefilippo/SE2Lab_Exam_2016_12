@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/stefanodefilippo/SE2Lab_Exam_2016_12#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "util": "^0.10.3"
   }
 }

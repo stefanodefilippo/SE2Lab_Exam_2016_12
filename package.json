@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node server/index.js"
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/stefanodefilippo/SE2Lab_Exam_2016_12/issues"
   },
-  "homepage": "https://github.com/stefanodefilippo/SE2Lab_Exam_2016_12#readme"
+  "homepage": "https://github.com/stefanodefilippo/SE2Lab_Exam_2016_12#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }

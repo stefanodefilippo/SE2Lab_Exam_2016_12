@@ -78,3 +78,56 @@ describe("Test /searchStudent", function() {
 
 
 });
+
+// Test for /deleteStudent
+describe("Test /deleteStudent", function() {
+	//set the data
+	var data = {ID: '1', SSN: 'AB45'};
+	
+	//legal request
+	it("to returns status code 200", function(done) {
+	  client.post(base_url + "deleteStudent/", data, function(err, res, body) {
+		expect(body).toEqual(
+			{
+				ID: "1",
+				SSN: "AB45", 
+				name: "Mattia",
+				address: "via Roma",
+				mark: "5"
+			}
+		);
+
+		done();
+	  });
+	});
+    
+    var data3 = {SSN: '9IK8'};
+	
+	//legal request
+	it("to returns status code 200", function(done) {
+	  client.post(base_url + "deleteStudent/", data3, function(err, res, body) {
+		expect(body).toEqual(
+			{
+				ID: "3",
+				SSN: "9IK8", 
+				name: "Paolo",
+				address: "via Trento",
+				mark: "7"
+			}
+		);
+
+		done();
+	  });
+	});
+	
+	//student non existing
+	data1 = {ID: "10" };
+	it("to returns status code 406", function(done) {
+	  client.post(base_url + "deleteStudent/", data1, function(err, res, body) {
+		expect(res.statusCode).toBe(404);
+		done();
+	  });
+	});
+	
+
+});
